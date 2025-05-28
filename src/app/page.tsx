@@ -1,3 +1,4 @@
+import { ReviewClient } from "@/components/review-client";
 import { readdir, stat, readFile } from "node:fs/promises";
 import { join, normalize } from "node:path";
 
@@ -77,11 +78,12 @@ export default async function Page({
           detailed analysis of the code, including security vulnerabilities,
           code style, and performance optimizations.
         </p>
-        {/* <ReviewClient
+        
+        <ReviewClient
           files={data?.files || []}
           selectedFile={selectedFile}
           file={path}
-        /> */}
+        />
       </div>
     </div>
   );
