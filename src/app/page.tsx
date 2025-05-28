@@ -60,9 +60,6 @@ export default async function Page({
   const data = await getAllFilesFromGit();
   const selectedFile = await getSelectedFile(path);
 
-  console.log(data)
-
-
   return (
     <div className=''>
       <header className='flex justify-between items-center'>
@@ -78,7 +75,7 @@ export default async function Page({
           detailed analysis of the code, including security vulnerabilities,
           code style, and performance optimizations.
         </p>
-        
+
         <ReviewClient
           files={data?.files || []}
           selectedFile={selectedFile}

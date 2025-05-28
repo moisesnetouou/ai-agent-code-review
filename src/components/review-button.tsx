@@ -23,20 +23,19 @@ export function ReviewButton({
   const handleReview = async () => {
     if (!selectedFile) return;
 
-    setIsLoading(true);
+    setIsLoading(true)
 
     try {
-      const { text } = await createReviewAgent({
-        prompt:
-          "Please review this code and provide detailed feedback with line numbers.",
-        code: fileContent,
-      });
+      const { text  } = await createReviewAgent({
+        prompt: "Please review this code and provide detailed feedback with line numbers",
+        code: fileContent
+      })
 
-      setReview(text);
+      setReview(text) 
     } catch (error) {
-      console.error("Error creating review:", error);
+      console.error("Error creating review:", error)
     } finally {
-      setIsLoading(false);
+      setIsLoading(false)
     }
   };
 
